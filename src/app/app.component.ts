@@ -51,7 +51,7 @@ export class AppComponent implements OnDestroy{
     localStorage.setItem("pending", JSON.stringify(this.pending))
   }
   deleteToDo(i:number){
-    const sure = confirm("Are you sure to delete this task (item)?");
+    const sure = confirm("مطمئن هستید این برنامه را حذف کنید?");
     if(sure){
       this.completed.splice(i,1);
       localStorage.setItem("completed", JSON.stringify(this.completed));
@@ -59,7 +59,7 @@ export class AppComponent implements OnDestroy{
   }
   markAll(){
     if(!this.pending.length) {
-      alert("There is No Pending Tasks");
+      alert("هیچ برنامه در حال انجام وجود ندارد");
       return;
     }
     this.pending.map((_,i)=>{
@@ -80,10 +80,10 @@ export class AppComponent implements OnDestroy{
   }
   clearAll(){
     if(!this.completed.length) {
-      alert("There is No Completed Tasks");
+      alert("هیچ برنامه ی کامل شده ای وجود ندارد!");
       return;
     }
-    const sure = confirm("Are you sure to Clear all Completed Tasks?");
+    const sure = confirm("آیا مطمئن هستید میخواهید تمام برنامه های کامل شده را حذف کنید؟");
     this.completed.map(()=>{
       if(sure){
         this.completed.splice(0,this.completed.length);
