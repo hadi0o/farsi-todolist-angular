@@ -42,7 +42,7 @@ export class AppComponent implements OnDestroy{
     }
   }
   editToDo(i:number){
-    const newVal = prompt('Enter a new Value');
+    const newVal = prompt('مقدار جدید را وارد کنید');
     if(newVal?.trim() === "") alert("It's Required");
     else{
       this.pending[i].item = newVal!;
